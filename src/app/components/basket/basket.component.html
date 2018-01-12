@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngFor="let item of basket">
+        <div *ngIf="item.quantity > 1">
+          <h1>{{item.title}}</h1>
+        </div>
+        <div class="form-group">
+          <h5 class="form-control">{{item.title}} : {{item.price | currency: 'GBP'}} </h5>
+          <button class="btn btn-warning form-control" (click)="removeItem((item.title), (item.price))">Remove item</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 offset-md-10">
+      <h5>Total: {{displayTotal| number : '1.2-2'}} : {{selectedCurrency}}</h5>
+      <select (change)="changeHandler($event)">
+        <option *ngFor="let key of keys" value="{{key}}">{{key}}</option>
+      </select>
+      <br>
+      <br>
+      <button class="btn btn-success">Check Out</button>
+    </div>
+  </div>
+</div>

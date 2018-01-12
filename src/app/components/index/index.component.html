@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <div class="row">
+    <div *ngFor="let i of productList">
+      <div class="col-md-3">
+        <div class="card" style="width: 15em; height: 20em; background-color: #FAFAFA">
+          <div class="card-img-top" [innerHTML]="i.img"></div>
+          <div class="card-body">
+          </div>
+          <h5 class="card-title" ([ngModel])="title">{{i.title}}</h5>
+          <p class="card-text" ([ngModel])="price">{{i.price | currency:'GBP' }}</p>
+          <button class="btn btn-block " style="background-color: #ff9900" 
+          (click)="addToCart((i.title), (i.price))">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

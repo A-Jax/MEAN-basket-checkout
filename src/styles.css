@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+.card {
+  /* padding: 20px; */
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* Important part */
+.modal-dialog{
+  overflow-y: initial !important
+}
+.modal-body{
+  height: 250px;
+  overflow-y: auto;
+}
